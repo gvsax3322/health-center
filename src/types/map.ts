@@ -13,4 +13,5 @@ export type Marker = {
   map: NaverMap;
   coordinates: Coordinates;
   icon: ImageIcon;
+  onClick: () => void;
 };
