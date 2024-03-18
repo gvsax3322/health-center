@@ -13,6 +13,9 @@ import { useMap } from '@/hooks/useMap';
 import { useRouter } from 'next/navigation';
 import copy from 'copy-to-clipboard';
 
+// Next.js 13 버전 이상 처리
+import { Suspense } from 'react';
+
 export default function Home() {
   // 라우터 활용
   const router = useRouter();
@@ -26,6 +29,8 @@ export default function Home() {
     // console.log(query);
     // 패스 이동을 표현
     router.push(query);
+
+    //  query 를 클립보드에 복사해서 보관
     copy(query);
   }, [router, getMapOption]);
 
@@ -74,7 +79,10 @@ export default function Home() {
         ]}
       />
       <main style={{ width: '100%', height: '100%' }}>
-        <MapSection />
+        {/* Next.js 13 이상 버전 처리 */}
+        <Suspense fallback={<>Loading...</>}>
+          <MapSection />
+        </Suspense>
       </main>
     </>
   );
