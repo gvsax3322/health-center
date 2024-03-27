@@ -1,4 +1,3 @@
-import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 export const metadata: Metadata = {
@@ -18,8 +17,6 @@ export default function RootLayout({
           name="naver-site-verification"
           content="fb449bff94541ff4aa8112e27b29db8129a91d7d"
         />
-
-        <GoogleAnalytics gaId="G-L57MXLTT6K" />
       </head>
       <body>{children}</body>
     </html>
