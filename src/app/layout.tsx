@@ -17,6 +17,10 @@ export default function RootLayout({
           name="naver-site-verification"
           content="fb449bff94541ff4aa8112e27b29db8129a91d7d"
         />
+        <link
+          rel="canonical"
+          href="https://health-center-gvsax3322.vercel.app"
+        ></link>
       </head>
       <body>{children}</body>
     </html>
